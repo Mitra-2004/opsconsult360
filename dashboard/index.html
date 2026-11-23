@@ -21,7 +21,7 @@ th{color:var(--muted);background:#f7f9fa;font-size:12px}tr:hover td{background:#
 .detail{background:#f4fbf8;border-left:3px solid var(--accent);padding:16px;margin-top:15px}
 .fields{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.fields dt{color:var(--muted);font-size:12px}.fields dd{margin:0;font-weight:600}
 @media(max-width:850px){.cards{grid-template-columns:repeat(2,1fr)}}@media(max-width:500px){main{padding:15px}.cards{grid-template-columns:1fr}.fields{grid-template-columns:repeat(2,1fr)}}
-</style></head><body>
+</style><link rel="stylesheet" href="v2.css"></head><body>
 <header><small>SIMULATED OPERATIONS · 23 NOV 2026</small><h1>OpsConsult 360</h1><div>Project Performance & Operations MIS</div></header>
 <nav class="nav" aria-label="Report pages">
 <button data-view="overview" aria-pressed="true">Executive overview</button>
@@ -39,7 +39,7 @@ const escapeHTML=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;'
 const costs={};for(const r of DB.financials){const x=costs[r.project_id]??={plan:0,actual:0,revenue:0};x.plan+=N(r.planned_cost_inr);x.actual+=N(r.actual_cost_inr);x.revenue+=N(r.revenue_inr)}
 let view='overview',selection=null;
 for(const d of [...new Set(DB.projects.map(p=>p.department))].sort()){const e=document.createElement('option');e.textContent=d;$('dept').append(e)}
-const filtered=()=>DB.projects.filter(p=>($('dept').value==='All'||p.department===$('dept').value)&&
+let statusFilter='All';const filtered=()=>DB.projects.filter(p=>(statusFilter==='All'||p.status===statusFilter)&&($('dept').value==='All'||p.department===$('dept').value)&&
 (p.project_id.toLowerCase().includes($('search').value.toLowerCase())||p.project_name.toLowerCase().includes($('search').value.toLowerCase())));
 const totals=ps=>ps.reduce((a,p)=>{const x=costs[p.project_id]||{plan:0,actual:0,revenue:0};a.plan+=x.plan;a.actual+=x.actual;a.revenue+=x.revenue;return a},{plan:0,actual:0,revenue:0});
 const cards=rows=>'<div class="cards">'+rows.map(([l,v])=>'<div class="card"><small>'+escapeHTML(l)+'</small><strong>'+escapeHTML(v)+'</strong></div>').join('')+'</div>';
@@ -80,4 +80,4 @@ $('reset').onclick=()=>{$('dept').value='All';$('search').value='';view='overvie
 $('export').onclick=()=>{const cols=['project_id','project_name','department','status','completion_pct','planned_end_date'];const quote=v=>'"'+String(v??'').replaceAll('"','""')+'"';
 const text=[cols.join(','),...filtered().map(p=>cols.map(k=>quote(p[k])).join(','))].join('\r\n');
 const url=URL.createObjectURL(new Blob([text],{type:'text/csv;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download='opsconsult-projects.csv';document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url)};render();
-</script></body></html>
+</script><script src="v2.js"></script></body></html>
