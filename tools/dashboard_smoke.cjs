@@ -1,0 +1,23 @@
+const fs=require('fs'),vm=require('vm'),assert=require('assert'),path=require('path');
+const html=fs.readFileSync(path.join(__dirname,'..','dashboard','index.html'),'utf8');
+const script=html.match(/<script>([\s\S]*?)<\/script>/);
+assert(script,'Embedded dashboard script missing');
+new vm.Script(script[1]);
+const nodes={};
+function node(id){if(!nodes[id]) nodes[id]={id,value:id==='dept'?'All':'',innerHTML:'',textContent:'',dataset:{},append(){},setAttribute(){},addEventListener(){},scrollIntoView(){},click(){},remove(){}};return nodes[id]}
+const nav=['overview','projects','finance','resources'].map(name=>({dataset:{view:name},setAttribute(){}}));
+const document={getElementById:node,createElement(){return {textContent:'',append(){},click(){},remove(){}}},querySelectorAll(q){return q==='[data-view]'?nav:[]},body:{appendChild(){}}};
+const env={document,console,Blob:class{},URL:{createObjectURL(){return 'blob:test'},revokeObjectURL(){}}};
+vm.createContext(env);vm.runInContext(script[1],env);
+assert(node('content').innerHTML.includes('60'),'Default portfolio count');
+const baseline=node('content').innerHTML;
+node('dept').value='Engineering';node('dept').onchange();
+assert(node('content').innerHTML!==baseline,'Department filter must change the dashboard');
+node('dept').value='All';node('dept').onchange();
+vm.runInContext("selection='PRJ019';view='projects';render()",env);
+assert(node('detail').innerHTML.includes('Project investigation'),'Project investigation must render');
+assert(node('detail').innerHTML.includes('Recorded plan'),'Financial details missing');
+node('reset').onclick();assert(node('content').innerHTML===baseline,'Reset should restore overview');
+node('search').value='PRJ001';node('search').oninput();
+assert(node('content').innerHTML.includes('1'),'Project search should narrow results');
+console.log('PASS: dashboard JavaScript, default KPI, department filter, investigation, reset and search');
