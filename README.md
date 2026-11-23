@@ -1,43 +1,66 @@
 # OpsConsult 360
-**Project Performance & Operations MIS | Excel · SQL · Management Reporting**
+**Project Performance & Operations MIS** · Advanced Excel · SQL · Management Reporting · Power BI preparation
 
-A portfolio case study for an internal business-operations review system. All records and results are **synthetic** and are not actual Celoxis company data.
+A professional portfolio case study for business operations and COO reporting. **All records are synthetic** and do not describe Celoxis or any real employer.
 
-## Repository contents
+## Purpose
+Support the full operations workflow: **Observe → Investigate → Understand → Decide → Report.** Review project delivery, cost overruns, recorded revenue, staffing capacity and follow-up ownership.
 
-| Path | Purpose | Status |
-|---|---|---|
-| `excel/OpsConsult_360_Excel_Final_Review.xlsx` | Excel MIS with executive metrics, department analysis, investigation, financial and resource reporting | Uploaded |
-| `sql/opsconsult.db` | Sample SQLite relational database | Uploaded |
-| `sql/analysis.sql` | Department delivery, financial variance, monthly revenue and resource utilization analyses | Uploaded |
-| `docs/COO_Management_Review.pptx` | Five-slide management review and recommendations | Uploaded |
-| `docs/KPI_DICTIONARY.md` | Precise KPI definitions and assumptions | Uploaded |
-| `docs/VALIDATION_REPORT.md` | Recorded dataset and analytical QA | Uploaded |
-| `docs/DASHBOARD_QA_UPDATE.md` | Dashboard fixes and user-side interaction checks | Uploaded |
-| `powerbi/measures.dax` | Reference DAX measures for authoring | Uploaded |
-| `powerbi/POWER_BI_SETUP.md` | Power BI implementation instructions | Uploaded |
+## Repository structure
 
-### Important: files not present in this repository yet
-- `dashboard/index.html` and `dashboard/data.json` — the previously tested HTML dashboard and its data payload.
-- `data/` — six source CSV datasets (`projects`, `tasks`, `financials`, `employees`, `timesheets`, `actions`).
+| Location | Deliverable |
+|---|---|
+| [excel/OpsConsult_360_Excel_Final_Review.xlsx](excel/OpsConsult_360_Excel_Final_Review.xlsx) | 19-sheet formula-driven MIS workbook and executive review |
+| [excel/CREATE_NATIVE_PIVOTS.bas](excel/CREATE_NATIVE_PIVOTS.bas) | VBA module to create three *native* Excel PivotTables |
+| [dashboard/index.html](dashboard/index.html) | Self-contained interactive HTML dashboard (download and open locally) |
+| [dashboard/data.json](dashboard/data.json) | Synthetic data behind the offline dashboard |
+| [data/](data/) | Six relational CSV datasets |
+| [sql/opsconsult.db](sql/opsconsult.db) | SQLite database / reproducible data snapshot |
+| [sql/analysis.sql](sql/analysis.sql) | Department, cost, monthly revenue and utilization analyses |
+| [docs/COO_Management_Review.pptx](docs/COO_Management_Review.pptx) | Five-slide executive management review |
+| [docs/KPI_DICTIONARY.md](docs/KPI_DICTIONARY.md) | Metric definitions, time grain and caveats |
+| [docs/AUTOMATED_QA.md](docs/AUTOMATED_QA.md) | Results of automated cross-file validation |
+| [powerbi/](powerbi/) | DAX measure references and authoring steps, **not a finished Power BI report** |
+| [tools/](tools/) | Rebuild and verification scripts |
 
-These components existed in the previously prepared local ZIP, but were **not found in the GitHub tree** during the 23 November 2026 audit. Until uploaded, the dashboard cannot be reproduced from this repository alone; the SQL example database and Excel workbook are available.
+## Quick start
+1. Download the repository ZIP from GitHub.
+2. Open `excel/OpsConsult_360_Excel_Final_Review.xlsx` using Excel. Start with **COO Review**, **Project Investigation**, **Pivot Analysis**, and **Executive QA Plus**.
+3. Open `dashboard/index.html` in a browser. The generated version contains embedded synthetic data and works offline. Test department filters, exception investigation, search, Reset and CSV export.
+4. If SQLite is installed, run `sqlite3 sql/opsconsult.db < sql/analysis.sql`.
+5. Open `docs/COO_Management_Review.pptx` to review management findings and recommended decisions.
 
-## Business use case
-A COO or operations analyst needs to monitor project completion, exceptions, sampled actual vs planned expenditure, employee utilization and action follow-ups. An analyst should be able to observe an exception, investigate it, recommend a decision and track an owner.
+## Advanced Excel: native PivotTables
+The workbook currently has formula-based pivot-*style* summaries, **not native PivotTable objects or slicers**. To add native PivotTables in Excel on Mac:
+1. Make a copy of the workbook. In Excel, enable the **Developer** tab if needed.
+2. Open the Visual Basic Editor, insert/import the module from `excel/CREATE_NATIVE_PIVOTS.bas`.
+3. Run `CreateOpsConsultPivotTables` and inspect the generated **Native Pivot - Delivery**, **Native Pivot - Finance**, and **Native Pivot - Resources** sheets.
+4. Reconcile totals to **COO Review** and **Excel QA**. Save as `.xlsm` to preserve the macro, or copy the completed PivotTable sheets into a macro-free `.xlsx` if desired.
 
-## Open the files
-1. Open `excel/OpsConsult_360_Excel_Final_Review.xlsx` in Excel. Explore COO Review, Project Investigation, Pivot Analysis and QA sheets.
-2. Open `docs/COO_Management_Review.pptx` for the executive narrative.
-3. Run the SQL reports with `sqlite3 sql/opsconsult.db < sql/analysis.sql`. (SQLite command-line tool required.)
-4. Once the `dashboard/` and `data/` folders are uploaded, follow the dashboard instructions and test its interactions.
+**The macro has been prepared, but has not been executed or tested inside Microsoft Excel.** Excel for Mac features and macro settings may vary.
 
-## Verification and limitations
-- The dataset is fictional and sampled; finance, project status and resource measures have different reporting grains.
-- Prior user-side HTML dashboard checks confirmed filter, project drill-down, search, export and reset interactions **in the local ZIP version**, not in this repository.
-- Excel contains **formula-based pivot-style summaries, not native PivotTables or slicers**.
-- `powerbi/` contains a model guide and DAX reference, **not an authored, tested or published Power BI report**.
-- Do not claim real business impact or company deployment.
+## Reproducible build and QA
+All six CSVs and the **GitHub version** of the offline HTML dashboard are deterministically regenerated from the committed SQLite snapshot:
 
-## Next milestone
-Upload the missing six CSVs and the corrected HTML dashboard, reconcile their KPIs with Excel and the SQLite database, then finish native Excel PivotTables and Power BI authoring when available.
+```bash
+python3 tools/build_assets.py
+python3 tools/qa_data.py
+node tools/dashboard_smoke.cjs
+```
+
+The GitHub Actions workflow performs those checks automatically, then commits any regenerated datasets/dashboard and the QA report. The GitHub HTML version **is not byte-identical to the earlier locally tested design**, although it uses the same dataset and its key logic was smoke-tested.
+
+## Data notes
+- 60 projects, 360 tasks, 240 finance rows, 48 employees, 240 timesheets and 21 actions.
+- 15 completed projects and 15 delayed projects.
+- Recorded-period unfavorable cost variance: **₹2,679,054.29**.
+- Sampled finance, projects and timesheets have different reporting grains. Do not equate sampled financial cost with a whole-project budget or sampled utilization with total organization capacity.
+- These figures demonstrate a simulated scenario, not measured business impact.
+
+## Completion and limitations
+**Verified:** repository file presence, six-table reconciliation with SQLite, key project and finance KPIs, workbook package structure, no cached formula errors, dashboard JavaScript smoke tests, 5-slide presentation structure.
+
+**Pending:** live Excel macro/PivotTable execution, full Excel recalculation and slicer testing, manual browser-level acceptance of the GitHub-regenerated dashboard, and Power BI Service report validation. A native `.pbix` is not included.
+
+## Portfolio interview demonstration
+Start with a delayed-project KPI, filter to the department, inspect a project and its recorded cost variance, review owner follow-ups, and present one defensible corrective action. Clearly distinguish observations from recommendations.
