@@ -110,5 +110,11 @@ const text=[cols.join(','),...filtered().map(p=>cols.map(k=>quote(p[k])).join(',
 const url=URL.createObjectURL(new Blob([text],{type:'text/csv;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download='opsconsult-projects.csv';document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url)};render();
 </script></body></html>""";
 html = html.replace("__DATA__", json.dumps(payload, separators=(",", ":"), ensure_ascii=False).replace("<", "\\u003c"))
+# Keep the v2 enhancements during every automated source-data rebuild.
+# Filter logic stays inside the original dashboard data model and all KPI computations.
+html = html.replace("const filtered=()=>DB.projects.filter(p=>(",
+    "let statusFilter='All';const filtered=()=>DB.projects.filter(p=>(statusFilter==='All'||p.status===statusFilter)&&(")
+html = html.replace("</head>", '<link rel="stylesheet" href="v2.css"></head>')
+html = html.replace("</body>", '<script src="v2.js"></script></body>')
 (ROOT / "dashboard" / "index.html").write_text(html, encoding="utf-8")
 print("Generated", ", ".join(TABLES), "and an offline dashboard.")
