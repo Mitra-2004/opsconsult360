@@ -114,7 +114,7 @@ html = html.replace("__DATA__", json.dumps(payload, separators=(",", ":"), ensur
 # Filter logic stays inside the original dashboard data model and all KPI computations.
 html = html.replace("const filtered=()=>DB.projects.filter(p=>(",
     "let statusFilter='All';const filtered=()=>DB.projects.filter(p=>(statusFilter==='All'||p.status===statusFilter)&&(")
-html = html.replace("</head>", '<link rel="stylesheet" href="v2.css"></head>')
+html = html.replace("</head>", '<link rel="icon" type="image/svg+xml" href="favicon.svg?v=1"><link rel="stylesheet" href="v2.css"></head>')
 html = html.replace("</body>", '<script src="v2.js"></script></body>')
 (ROOT / "dashboard" / "index.html").write_text(html, encoding="utf-8")
 print("Generated", ", ".join(TABLES), "and an offline dashboard.")
