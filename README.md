@@ -2,7 +2,7 @@
 
 ## v2 — Recruiter-grade enterprise UI
 
-**Live Vercel production deployment:** [opsconsult360.vercel.app](https://opsconsult360.vercel.app/). The production deployment is marked READY, and its CSS/JS/HTML asset manifest was inspected. Independent external HTTP verification was unavailable in this chat.
+**Live Vercel production deployment:** [opsconsult360.vercel.app](https://opsconsult360.vercel.app/). The production deployment is marked READY, and its CSS/JS/HTML asset manifest was inspected. GitHub Actions independently confirmed HTTP 200 responses for the public HTML, CSS and JS assets.
 
 The original synthetic dataset and reporting calculations are preserved. v2 improves presentation and decision-making without adding fabricated results:
 
@@ -13,7 +13,7 @@ The original synthetic dataset and reporting calculations are preserved. v2 impr
 - Project investigation details, financial checks, department filtering, reset, project search and CSV export retained.
 - Reduced-motion support and responsive layout at mobile widths.
 
-**QA:** The GitHub [v2 browser suite](.github/workflows/visual-qa.yml) passed with real Chromium testing of navigation, KPI filters, chart rendering, CSV downloads, project investigation, reset, and a 390px responsive viewport. Updated screenshots are in [docs/screenshots](docs/screenshots).
+**QA:** The [Public production endpoint QA](.github/workflows/live-site-smoke.yml) workflow passed HTTP checks for HTML, CSS and JS. The GitHub [v2 browser suite](.github/workflows/visual-qa.yml) passed with real Chromium testing of navigation, KPI filters, chart rendering, CSV downloads, project investigation, reset, and a 390px responsive viewport. Updated screenshots are in [docs/screenshots](docs/screenshots).
 
 **Limitations:** This is the standalone HTML dashboard, not the native Power BI report. Native Excel PivotTables and slicers, and account-level Power BI final inspection remain separate tasks. The Vercel production snapshot was uploaded via API rather than a connected Git repository, so future GitHub code updates require a new deployment.
 
@@ -21,7 +21,7 @@ The original synthetic dataset and reporting calculations are preserved. v2 impr
 
 **[Open OpsConsult 360 — Production dashboard](https://opsconsult360.vercel.app/)**
 
-The Vercel production deployment is marked **READY**, the domain is verified, and deployment authentication/password protection is disabled. The repository's Playwright tests passed for the matching GitHub dashboard source. **An independent external HTTP/browser check of the Vercel URL was not possible from this chat**; please open the link to confirm it loads in your browser.
+The Vercel production deployment is marked **READY**, the domain is verified, and deployment authentication/password protection is disabled. The repository's Playwright tests passed for the matching GitHub dashboard source. **Public HTTP asset checks passed from GitHub Actions (HTML/CSS/JS); live browser interaction remains covered by the source-equivalent Playwright suite**; please open the link to confirm it loads in your browser.
 
 The website is the self-contained HTML dashboard; Power BI is a separate reporting component and is **not embedded** here. The deployment was created from a snapshot of `dashboard/index.html` rather than a linked Vercel Git repository; future GitHub commits will not automatically update this deployment.
 
