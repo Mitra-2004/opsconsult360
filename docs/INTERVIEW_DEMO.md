@@ -1,25 +1,26 @@
-# OpsConsult 360 — Interview demonstration (2 minutes)
+# OpsConsult 360 — recruiter demonstration (2 minutes)
 
-**Scenario:** COO needs to review an IT services project portfolio and understand which deliveries require intervention. Data is fictional and clearly synthetic.
+**Scenario:** An operations leader wants to investigate project delays, recorded cost variance, resource utilization and follow-up ownership. **All records are synthetic.**
 
-| Time | What to show | What to say |
+| Time | Demonstration | Explanation |
 |---|---|---|
-| 0:00–0:20 | Excel COO Review, portfolio totals | "I created a 60-project synthetic operational portfolio with consistent project, cost, resource and action records." |
-| 0:20–0:40 | Excel Pivot Analysis, department trends | "I compare status, progress and recorded costs by department, distinguishing sampled-period spending from whole-project budgets." |
-| 0:40–1:05 | HTML dashboard: department filter, priority exceptions | "I identify delivery risks and variance exceptions, rather than making decisions using the overall average alone." |
-| 1:05–1:25 | Project investigation and action ownership | "I drill into the affected project, review cost variance and outstanding follow-up responsibility." |
-| 1:25–1:45 | SQLite SQL scripts / QA report | "I aggregate finance to project grain to avoid duplicate costs when joining the one-to-many operational tables." |
-| 1:45–2:00 | Five-slide COO review | "I summarize findings, suggest corrective actions and acknowledge synthetic-data limitations." |
+| 0:00–0:20 | Live dashboard / Excel COO Review | "I modeled a 60-project synthetic portfolio and its connected finance, task, staffing and action data." |
+| 0:20–0:40 | Excel native Delivery, Finance and Resources PivotTables | "I can compare departments, apply slicers and reconcile the numbers against the source." |
+| 0:40–1:00 | Native Power BI Executive Overview | "My executive KPIs reconcile against ten Excel checkpoints and support operational filtering." |
+| 1:00–1:20 | Power BI Project Performance → Project Detail drill-through | "I can investigate one project's performance and return to the management summary." |
+| 1:20–1:40 | Power BI Financial Analytics and Resource & Operations | "The reporting-period slicer controls period-aware financial metrics; resource hours use a comparable sample denominator." |
+| 1:40–2:00 | SQL queries and COO management review | "I prevent duplicate aggregates when joining one-to-many operational tables and communicate corrective actions clearly." |
 
-## Interview questions to rehearse
+**If the interviewer cannot access your authenticated Power BI report:** demonstrate the [public interactive dashboard](https://opsconsult360.vercel.app/) and use screenshots of the actual Power BI report only when captured and accurately labeled.
 
-**What is your biggest KPI?** Not one number: delivery delays, recorded cost variance and overdue follow-ups together explain operational priorities.
+## Questions to rehearse
 
-**Why SQLite and Excel?** They make an auditable, low-friction MIS proof of concept; Excel suits ad hoc management reviews and SQL makes aggregation reproducible.
+- **Why these KPIs?** Delays, costs, resource availability and open follow-ups give complementary signals; no single number defines portfolio health.
+- **Why Excel + SQL + Power BI?** Excel supports operational ad hoc review; SQL validates aggregation and grain; Power BI provides interactive reporting; the website provides a publicly accessible demo.
+- **How did you avoid errors?** Reconciled ten common KPIs across Excel and Power BI, checked 13 measures, and separated project snapshots from sampled-period transactions.
+- **What is the biggest analytical risk?** Double-counting when joining projects to multiple one-to-many tables, and comparing sample-period costs with lifecycle budgets.
+- **What should an operations manager do?** Assign owners to the highest-impact delayed projects and investigate cost variances before recommending a change.
 
-**What is the biggest data modeling risk?** Double-counting financial records when joining project rows to tasks/timesheets, and comparing sampled financial flows against lifecycle budgets.
+## Evidence and disclosure
 
-**What makes it original?** Consistent data model, source-to-dashboard reconciliation, documented caveats, decision workflow and real interface interactions.
-
-## Demonstrate without exaggeration
-Do not claim the project improved actual customer revenue or was adopted by Celoxis. Do not claim a native Power BI deliverable or Excel PivotTables until opened and verified.
+The [Power BI acceptance record](POWER_BI_ACCEPTANCE.md) reports final owner-confirmed acceptance after remediation; private report access and screenshots have not been published. The native Excel final workbook was structurally validated, but its `.xlsm` upload to GitHub is outstanding. Do not say the project generated real revenue, was adopted by an employer, or uses actual Celoxis data.
