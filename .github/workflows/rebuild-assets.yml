@@ -1,0 +1,26 @@
+name: Rebuild OpsConsult Assets
+on:
+  push:
+    paths:
+      - 'tools/build_assets.py'
+      - 'sql/opsconsult.db'
+      - '.github/workflows/rebuild-assets.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Rebuild CSV exports and dashboard from the committed SQLite database
+        run: python3 tools/build_assets.py
+      - name: Commit regenerated assets
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data dashboard
+          if ! git diff --cached --quiet; then
+            git commit -m 'Regenerate verified OpsConsult source datasets and dashboard'
+            git push
+          fi
