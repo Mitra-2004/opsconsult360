@@ -1,4 +1,4 @@
-// Enter each measure separately after importing CSV tables.
+// Create measures in Power BI Desktop; names should match imported CSV table names.
 Projects = DISTINCTCOUNT(projects[project_id])
 Completed Projects = CALCULATE([Projects], projects[status]="Completed")
 Delayed Projects = CALCULATE([Projects], projects[status]="Delayed")
