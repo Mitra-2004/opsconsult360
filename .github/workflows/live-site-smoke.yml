@@ -1,0 +1,16 @@
+name: Public production endpoint QA
+on:
+  push:
+    paths:
+      - 'tools/check_live_site.cjs'
+      - '.github/workflows/live-site-smoke.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate live Vercel HTML, CSS and JS over HTTPS
+        run: node tools/check_live_site.cjs
