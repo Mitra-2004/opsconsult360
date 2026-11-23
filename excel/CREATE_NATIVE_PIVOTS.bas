@@ -75,3 +75,35 @@ Private Sub CreatePivot(ByVal wb As Workbook, ByVal sourceName As String, _
     End With
     destination.Columns("A:J").AutoFit
 End Sub
+
+
+' Optional slicers for the three native PivotTables.
+' Supported functionality depends on the installed Excel for Mac version.
+' Run this ONLY after CreateOpsConsultPivotTables succeeds.
+Public Sub AddOpsConsultDepartmentSlicers()
+    Dim created As Integer
+    created = 0
+    If AddDepartmentSlicer("Native Pivot - Delivery", "ptDelivery", "slcDeliveryDepartment") Then created = created + 1
+    If AddDepartmentSlicer("Native Pivot - Finance", "ptFinance", "slcFinanceDepartment") Then created = created + 1
+    If AddDepartmentSlicer("Native Pivot - Resources", "ptResources", "slcResourceDepartment") Then created = created + 1
+    MsgBox CStr(created) & " of 3 department slicers were created." & vbCrLf & _
+        "If your Excel version rejected a slicer, use Insert > Slicer > Department.", vbInformation
+End Sub
+
+Private Function AddDepartmentSlicer(ByVal sheetName As String, _
+    ByVal pivotName As String, ByVal slicerName As String) As Boolean
+    Dim ws As Worksheet
+    Dim pt As PivotTable
+    Dim sc As SlicerCache
+    On Error GoTo CouldNotAdd
+    Set ws = ThisWorkbook.Worksheets(sheetName)
+    Set pt = ws.PivotTables(pivotName)
+    Set sc = ThisWorkbook.SlicerCaches.Add(pt, "Department")
+    sc.Slicers.Add SlicerDestination:=ws, Name:=slicerName, _
+        Caption:="Department", Top:=42, Left:=540, Width:=156, Height:=215
+    AddDepartmentSlicer = True
+    Exit Function
+CouldNotAdd:
+    Debug.Print "Slicer unavailable for " & pivotName & ": " & Err.Description
+    AddDepartmentSlicer = False
+End Function
