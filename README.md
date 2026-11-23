@@ -1,30 +1,43 @@
-# OpsConsult 360 — Project Performance & Operations MIS
+# OpsConsult 360
+**Project Performance & Operations MIS | Excel · SQL · Management Reporting**
 
-Portfolio case study for an internal business-operations review system. **All data is synthetic. This is not actual Celoxis data.**
+A portfolio case study for an internal business-operations review system. All records and results are **synthetic** and are not actual Celoxis company data.
 
-## Deliverables
-- `OpsConsult_360_Excel_Final_Review.xlsx` — latest formula-driven Excel management reporting workbook with department summaries, financials, COO review and project investigation.
-- `dashboard/index.html` and `dashboard/data.json` — locally hosted/standalone interactive management reporting interface. Open HTML with local files if supported; for reliable JSON loading serve this folder with `python3 -m http.server 8000` then open `http://localhost:8000/dashboard/`.
-- `data/` — 6 connected CSV tables: projects, tasks, financials, employees, timesheets, and actions.
-- `sql/analysis.sql`, `sql/opsconsult.db` — reproducible analysis queries and SQLite example database.
-- `docs/COO_Management_Review.pptx` — five-slide management review.
-- `powerbi/` — DAX measures and setup instructions, **not a finished PBIX report**.
+## Repository contents
 
-## Main management questions
-What is the status of the project portfolio? Which departments have delays or unfavorable financial variance? Where is resource capacity constrained? What corrective actions are overdue?
+| Path | Purpose | Status |
+|---|---|---|
+| `excel/OpsConsult_360_Excel_Final_Review.xlsx` | Excel MIS with executive metrics, department analysis, investigation, financial and resource reporting | Uploaded |
+| `sql/opsconsult.db` | Sample SQLite relational database | Uploaded |
+| `sql/analysis.sql` | Department delivery, financial variance, monthly revenue and resource utilization analyses | Uploaded |
+| `docs/COO_Management_Review.pptx` | Five-slide management review and recommendations | Uploaded |
+| `docs/KPI_DICTIONARY.md` | Precise KPI definitions and assumptions | Uploaded |
+| `docs/VALIDATION_REPORT.md` | Recorded dataset and analytical QA | Uploaded |
+| `docs/DASHBOARD_QA_UPDATE.md` | Dashboard fixes and user-side interaction checks | Uploaded |
+| `powerbi/measures.dax` | Reference DAX measures for authoring | Uploaded |
+| `powerbi/POWER_BI_SETUP.md` | Power BI implementation instructions | Uploaded |
 
-## Quick start
-1. Open the Excel workbook in Microsoft Excel; inspect `COO Review`, `Project Investigation`, `Pivot Analysis`, and `Executive QA Plus`.
-2. Open `dashboard/index.html` with a local browser; check department filters, priority exceptions, drill-downs, CSV export and Reset.
-3. Run `sqlite3 sql/opsconsult.db < sql/analysis.sql` to reproduce the SQL analyses.
-4. Open the COO review presentation to discuss prioritization and suggested actions.
+### Important: files not present in this repository yet
+- `dashboard/index.html` and `dashboard/data.json` — the previously tested HTML dashboard and its data payload.
+- `data/` — six source CSV datasets (`projects`, `tasks`, `financials`, `employees`, `timesheets`, `actions`).
 
-## QA and limitations
-- Prior user-side browser checks confirmed department filtering, exception drilldown, search, export, and reset in the corrected dashboard.
-- Formula and SQL validations are recorded in `docs/VALIDATION_REPORT.md` and `docs/DASHBOARD_QA_UPDATE.md`.
-- The spreadsheet has pivot-*style* formula summaries, **not native PivotTable objects or slicers**.
-- A native Power BI report is still pending; do not claim it is built until verified.
-- No claim of real company impact, deployment or accuracy on real business operations is made.
+These components existed in the previously prepared local ZIP, but were **not found in the GitHub tree** during the 23 November 2026 audit. Until uploaded, the dashboard cannot be reproduced from this repository alone; the SQL example database and Excel workbook are available.
 
-## Interview demo
-Observe a delivery KPI, filter to the department, investigate a delayed or over-budget project, inspect financial and action-owner details, and recommend a tracked follow-up action.
+## Business use case
+A COO or operations analyst needs to monitor project completion, exceptions, sampled actual vs planned expenditure, employee utilization and action follow-ups. An analyst should be able to observe an exception, investigate it, recommend a decision and track an owner.
+
+## Open the files
+1. Open `excel/OpsConsult_360_Excel_Final_Review.xlsx` in Excel. Explore COO Review, Project Investigation, Pivot Analysis and QA sheets.
+2. Open `docs/COO_Management_Review.pptx` for the executive narrative.
+3. Run the SQL reports with `sqlite3 sql/opsconsult.db < sql/analysis.sql`. (SQLite command-line tool required.)
+4. Once the `dashboard/` and `data/` folders are uploaded, follow the dashboard instructions and test its interactions.
+
+## Verification and limitations
+- The dataset is fictional and sampled; finance, project status and resource measures have different reporting grains.
+- Prior user-side HTML dashboard checks confirmed filter, project drill-down, search, export and reset interactions **in the local ZIP version**, not in this repository.
+- Excel contains **formula-based pivot-style summaries, not native PivotTables or slicers**.
+- `powerbi/` contains a model guide and DAX reference, **not an authored, tested or published Power BI report**.
+- Do not claim real business impact or company deployment.
+
+## Next milestone
+Upload the missing six CSVs and the corrected HTML dashboard, reconcile their KPIs with Excel and the SQLite database, then finish native Excel PivotTables and Power BI authoring when available.
