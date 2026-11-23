@@ -26,7 +26,7 @@ The four-view HTML management dashboard includes department/status filtering, in
 | Area | What it contains | Source |
 |---|---|---|
 | Excel | 19-sheet source MIS workbook, formulas, executive review and reconciliation | [Source workbook (.xlsx)](excel/OpsConsult_360_Excel_Final_Review.xlsx) |
-| Native Excel | Separately tested 22-sheet macro-enabled workbook: 3 native PivotTables, 3 Department slicers and VBA preserved | **Final `.xlsm` pending repository upload**; [VBA creation module](excel/CREATE_NATIVE_PIVOTS.bas) |
+| Native Excel | Separately tested 22-sheet macro-enabled workbook: 3 native PivotTables, 3 Department slicers and VBA preserved | [Download final native Excel workbook (.xlsm)](excel/OpsConsult_360_Finall.xlsm) · [VBA creation module](excel/CREATE_NATIVE_PIVOTS.bas) |
 | Power BI Service | Report tested in My workspace: Executive Overview, Project Performance, Financial Analytics, Resource & Operations, plus Project Detail drill-through | [Power BI acceptance notes](docs/POWER_BI_ACCEPTANCE.md) |
 | SQL | SQLite database and repeatable business queries | [Database](sql/opsconsult.db) · [Analysis SQL](sql/analysis.sql) |
 | Data | Six linked synthetic source tables | [CSV datasets](data/) |
@@ -43,7 +43,7 @@ These are **owner/ChatGPT Work-reported application-test results**, not independ
 
 ## Excel acceptance
 
-The final user-provided `OpsConsult_360_Finall.xlsm` was inspected separately: valid ZIP/Office package, **22 sheets, 3 real native PivotTable XML parts, 3 slicer XML parts and preserved VBA**. Saved pivot totals were reconciled against project sources in a previous review. Excel’s interactive slicer filtering was tested by the workbook owner. **This final `.xlsm` is not yet committed to GitHub**; the `.xlsx` in the repository is the original 19-sheet source and must not be presented as having native PivotTables. [Excel acceptance record](docs/EXCEL_POWERBI_FINAL_ACCEPTANCE.md).
+The final user-provided `OpsConsult_360_Finall.xlsm` was inspected separately: valid ZIP/Office package, **22 sheets, 3 real native PivotTable XML parts, 3 slicer XML parts and preserved VBA**. Saved pivot totals were reconciled against project sources in a previous review. Excel’s interactive slicer filtering was tested by the workbook owner. **The final `.xlsm` is committed to GitHub and its Git blob hash matches the validated local upload exactly** (`642a68ba65b7f3f3127259f61a265f63bb5a12f6`). The `.xlsx` remains the original 19-sheet source and must not be presented as having native PivotTables. [Excel acceptance record](docs/EXCEL_POWERBI_FINAL_ACCEPTANCE.md).
 
 ## Data modeling and KPI integrity
 
@@ -58,7 +58,7 @@ More information: [KPI dictionary](docs/KPI_DICTIONARY.md) · [Automated QA](doc
 ## Run and reproduce
 
 1. Open [the live dashboard](https://opsconsult360.vercel.app/) or download the repository and open `dashboard/index.html` locally.
-2. Open the source Excel workbook; view **COO Review**, **Project Investigation**, **Pivot Analysis** and **Executive QA Plus**. The native PivotTable workbook is a *separate final macro-enabled file*.
+2. Open the source Excel workbook; view **COO Review**, **Project Investigation**, **Pivot Analysis** and **Executive QA Plus**. For native PivotTables and slicers, open [the final macro-enabled workbook](excel/OpsConsult_360_Finall.xlsm); it is separate from the original `.xlsx` source.
 3. Explore the [six CSVs](data/) and [SQLite queries](sql/analysis.sql).
 4. For the authenticated native Power BI report, use the workspace owner’s Power BI Service access.
 
