@@ -1,7 +1,7 @@
 # OpsConsult 360
 **Business Operations MIS · Excel · SQL · Power BI · Interactive Dashboard**
 
-[**Portfolio case study**](https://ved-khairnar-fieldnotes.freekestrel33.chatgpt.site/projects/opsconsult-360/) · [**Live management dashboard**](https://opsconsult360.vercel.app/) · [**Project screenshots**](docs/screenshots/) · [**Interview demonstration**](docs/INTERVIEW_DEMO.md) · [**Validation summary**](docs/EXCEL_POWERBI_FINAL_ACCEPTANCE.md)
+[**Portfolio case study**](https://vedkhairnar.vercel.app/projects/opsconsult-360/) · [**Live management dashboard**](https://opsconsult360.vercel.app/) · [**Project screenshots**](docs/screenshots/) · [**Interview demonstration**](docs/INTERVIEW_DEMO.md) · [**Validation summary**](docs/EXCEL_POWERBI_FINAL_ACCEPTANCE.md)
 
 > **Portfolio simulation.** Every record is synthetic; this project is not affiliated with, deployed by, or based on confidential records from any employer.
 
