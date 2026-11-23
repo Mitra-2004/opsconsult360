@@ -1,4 +1,13 @@
 # OpsConsult 360
+
+## Live interactive dashboard
+
+**[Open OpsConsult 360 — Production dashboard](https://opsconsult360.vercel.app/)**
+
+The Vercel production deployment is marked **READY**, the domain is verified, and deployment authentication/password protection is disabled. The repository's Playwright tests passed for the matching GitHub dashboard source. **An independent external HTTP/browser check of the Vercel URL was not possible from this chat**; please open the link to confirm it loads in your browser.
+
+The website is the self-contained HTML dashboard; Power BI is a separate reporting component and is **not embedded** here. The deployment was created from a snapshot of `dashboard/index.html` rather than a linked Vercel Git repository; future GitHub commits will not automatically update this deployment.
+
 **Project Performance & Operations MIS** · Advanced Excel · SQL · Management Reporting · Power BI preparation
 
 A professional portfolio case study for business operations and COO reporting. **All records are synthetic** and do not describe Celoxis or any real employer.
