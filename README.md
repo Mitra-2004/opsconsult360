@@ -1,22 +1,31 @@
-# OpsConsult 360
+# OpsConsult 360 — Project Performance & Operations MIS
 
-**Project Performance & Operations MIS** — business operations analytics portfolio project built with a clearly labelled synthetic project dataset.
+Business operations and management reporting portfolio project. **All portfolio data is synthetic and does not represent Celoxis operations.**
 
-## Business objective
-Provide portfolio-level visibility into project delivery, milestones, spending, department performance, resource utilization, and exception follow-up for management reviews.
+## Repository status
 
-## Components
-- **Excel MIS**: formula-driven project and financial reports, department analysis, investigation sheets, and reconciliation checks.
-- **Interactive HTML dashboard**: project register, filtering, exceptions, investigation drill-down and CSV export.
-- **SQL**: portfolio, financial, revenue, and resource reporting.
-- **COO review**: five-slide management presentation with recommendations.
-- **Power BI**: data/model setup resources are prepared; a native working Power BI report has **not** yet been published.
+The **SQL analysis, Power BI reference measures, methodology, QA reports and documentation** have been committed to this repository.
 
-## Dataset and limitations
-All figures are **synthetic, fictional portfolio data**. They are not Celoxis internal data. The current Excel workbook uses formula-based pivot-style summaries; native Excel PivotTables and slicers remain pending. Verify any claims against workbook formulas and the source data.
+The **Excel workbook, corrected interactive HTML dashboard, underlying CSV datasets, SQLite database and five-slide COO PowerPoint** are part of the prepared project package but are **not yet present in this GitHub repository**. The GitHub connection used for these commits cannot directly attach local binary files or the prepared archive.
 
-## Project files
-The completed local project package is being staged for upload. The full deliverable bundle is available from the accompanying ChatGPT conversation. Do not infer that the files mentioned here exist in this repository until their paths appear below.
+## Existing files
 
-## Development status
-Dashboard interactions were tested locally by the project owner, and calculations were checked in the source project. Additional application QA and Power BI authoring remain open.
+- `sql/analysis.sql` — financial, portfolio and resource analyses.
+- `powerbi/measures.dax` — reference DAX definitions.
+- `powerbi/POWER_BI_SETUP.md` — Power BI build instructions (not a finished report).
+- `docs/KPI_DICTIONARY.md` — definitions, source grain and caveats.
+- `docs/VALIDATION_REPORT.md` and `docs/DASHBOARD_QA_UPDATE.md` — testing notes and limitations.
+
+## Remaining upload
+
+The prepared distribution archive is named `opsconsult360_github_upload.zip` in the ChatGPT project conversation. Extract it and upload the *contents* into the repository root to complete the tracked project artifacts. It contains 20 project files.
+
+## Report scope
+
+Project status, milestone exceptions, planned versus actual cost, sampled resource utilization, action follow-ups and management recommendations.
+
+## Limitations
+
+The Excel pivot-style summaries are formula-based rather than native Excel PivotTables. Power BI report authoring is pending. Previously reported user-side dashboard QA covers key interactions, but complete cross-browser accessibility and all Excel features have not been independently verified.
+
+Never present synthetic data as actual employer results.
