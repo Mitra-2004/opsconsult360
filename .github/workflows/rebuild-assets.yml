@@ -1,26 +1,30 @@
-name: Rebuild OpsConsult Assets
+name: Rebuild and QA OpsConsult Assets
 on:
   push:
     paths:
-      - 'tools/build_assets.py'
+      - 'tools/**'
       - 'sql/opsconsult.db'
       - '.github/workflows/rebuild-assets.yml'
   workflow_dispatch:
 permissions:
   contents: write
 jobs:
-  rebuild:
+  verify:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Rebuild CSV exports and dashboard from the committed SQLite database
+      - name: Generate six CSV extracts and offline dashboard
         run: python3 tools/build_assets.py
-      - name: Commit regenerated assets
+      - name: Validate datasets and Excel workbook
+        run: python3 tools/qa_data.py
+      - name: Smoke test interactive dashboard JavaScript
+        run: node tools/dashboard_smoke.cjs
+      - name: Commit reproducible artifacts and QA report
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add data dashboard
+          git add data dashboard docs/AUTOMATED_QA.md
           if ! git diff --cached --quiet; then
-            git commit -m 'Regenerate verified OpsConsult source datasets and dashboard'
+            git commit -m 'Refresh validated OpsConsult assets and QA report'
             git push
           fi
