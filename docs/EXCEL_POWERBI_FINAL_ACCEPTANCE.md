@@ -11,7 +11,7 @@ The owner uploaded `OpsConsult_360_Finall.xlsm` after running `CreateOpsConsultP
 - A preserved VBA project inside the `.xlsm` workbook.
 - Reconciliation checkpoints: **60 projects**, **15 delayed**, **15 completed**, **₹2,679,054.29** recorded-period unfavorable cost variance, **21,904** logged hours.
 
-**Result:** Native object structure independently verified; owner-reported interactive filter tests. **Repository gap:** The `.xlsm` has not yet been uploaded to GitHub; the committed `excel/OpsConsult_360_Excel_Final_Review.xlsx` remains the earlier **19-sheet** source workbook. The presence of the original VBA module is not proof that the original `.xlsx` includes native pivot/slicer objects.
+**Result:** Native object structure independently verified; owner-reported interactive filter tests. **Repository upload verified:** [Final `.xlsm` workbook](../excel/OpsConsult_360_Finall.xlsm) is now committed to `main`. The GitHub blob SHA (`642a68ba65b7f3f3127259f61a265f63bb5a12f6`) exactly matches the uploaded local file's computed Git blob hash. The committed `excel/OpsConsult_360_Excel_Final_Review.xlsx` remains the earlier **19-sheet** source workbook. The presence of the original VBA module is not proof that the original `.xlsx` includes native pivot/slicer objects.
 
 ## Power BI Service
 
