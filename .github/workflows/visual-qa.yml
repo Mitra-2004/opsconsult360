@@ -1,0 +1,30 @@
+name: Visual QA and portfolio screenshots
+on:
+  push:
+    paths:
+      - 'tools/capture_screenshots.cjs'
+      - 'dashboard/index.html'
+      - '.github/workflows/visual-qa.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  screenshot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install browser testing dependency
+        run: |
+          npm install --no-save playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Capture dashboard pages and validate interactive filtering
+        run: node tools/capture_screenshots.cjs
+      - name: Commit verified screenshots
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add docs/screenshots
+          if ! git diff --cached --quiet; then
+            git commit -m 'Add verified management dashboard screenshots'
+            git push
+          fi
