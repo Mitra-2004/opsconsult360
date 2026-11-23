@@ -1,0 +1,13 @@
+// Enter each measure separately after importing CSV tables.
+Projects = DISTINCTCOUNT(projects[project_id])
+Completed Projects = CALCULATE([Projects], projects[status]="Completed")
+Delayed Projects = CALCULATE([Projects], projects[status]="Delayed")
+Completion Rate = DIVIDE([Completed Projects], [Projects], 0)
+Planned Cost = SUM(financials[planned_cost_inr])
+Actual Cost = SUM(financials[actual_cost_inr])
+Cost Variance = [Actual Cost] - [Planned Cost]
+Cost Variance % = DIVIDE([Cost Variance], [Planned Cost], 0)
+Recorded Revenue = SUM(financials[revenue_inr])
+Sample Resource Utilization = DIVIDE(SUM(timesheets[hours_logged]), SUM(timesheets[available_hours]), 0)
+Open Actions = CALCULATE(COUNTROWS(actions), actions[status]="Open")
+Overdue Open Actions = CALCULATE(COUNTROWS(actions), FILTER(actions, actions[status]="Open" && DATEVALUE(actions[due_date]) < TODAY()))
