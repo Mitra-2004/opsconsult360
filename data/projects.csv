@@ -1,0 +1,61 @@
+project_id,project_name,department,manager_id,start_date,planned_end_date,status,completion_pct,budget_inr,contract_value_inr
+PRJ001,Engineering Delivery 01,Engineering,EMP001,2025-11-27,2026-03-30,Completed,100.0,1025000.0,1695518.13
+PRJ002,Product Delivery 02,Product,EMP002,2026-06-14,2026-11-04,Completed,100.0,1775000.0,2309225.52
+PRJ003,Customer Success Delivery 03,Customer Success,EMP003,2025-09-30,2025-12-23,Completed,100.0,250000.0,334337.28
+PRJ004,Marketing Delivery 04,Marketing,EMP004,2026-07-05,2026-11-27,Completed,100.0,800000.0,1016963.51
+PRJ005,Finance Delivery 05,Finance,EMP005,2026-08-13,2026-11-17,Completed,100.0,450000.0,553134.98
+PRJ006,Operations Delivery 06,Operations,EMP006,2026-06-13,2026-08-29,Completed,100.0,1150000.0,1333937.28
+PRJ007,Engineering Delivery 07,Engineering,EMP007,2026-05-26,2026-08-03,Completed,100.0,1050000.0,1229997.03
+PRJ008,Product Delivery 08,Product,EMP008,2026-06-08,2026-11-24,Completed,100.0,525000.0,800362.87
+PRJ009,Customer Success Delivery 09,Customer Success,EMP009,2025-11-27,2026-02-12,Completed,100.0,1350000.0,2121006.05
+PRJ010,Marketing Delivery 10,Marketing,EMP010,2025-12-14,2026-06-07,Completed,100.0,1525000.0,2412236.49
+PRJ011,Finance Delivery 11,Finance,EMP011,2026-04-05,2026-06-27,Completed,100.0,1150000.0,1698942.25
+PRJ012,Operations Delivery 12,Operations,EMP012,2026-07-09,2026-09-28,Completed,100.0,1175000.0,1736282.52
+PRJ013,Engineering Delivery 13,Engineering,EMP013,2026-03-01,2026-06-26,Completed,100.0,800000.0,1102778.38
+PRJ014,Product Delivery 14,Product,EMP014,2025-08-02,2025-09-24,Completed,100.0,1475000.0,2023817.08
+PRJ015,Customer Success Delivery 15,Customer Success,EMP015,2026-01-02,2026-05-01,Completed,100.0,1125000.0,1777385.44
+PRJ016,Marketing Delivery 16,Marketing,EMP016,2025-12-10,2026-04-05,Delayed,36.0,850000.0,1103051.32
+PRJ017,Finance Delivery 17,Finance,EMP017,2026-03-25,2026-05-27,Delayed,29.0,1450000.0,2145680.14
+PRJ018,Operations Delivery 18,Operations,EMP018,2026-06-18,2026-08-15,Delayed,44.0,300000.0,508391.36
+PRJ019,Engineering Delivery 19,Engineering,EMP019,2025-10-28,2026-04-13,Delayed,35.0,1750000.0,2841959.62
+PRJ020,Product Delivery 20,Product,EMP020,2025-08-24,2025-12-08,Delayed,85.0,1450000.0,1680419.52
+PRJ021,Customer Success Delivery 21,Customer Success,EMP021,2026-08-29,2026-11-01,Delayed,50.0,1850000.0,2856069.08
+PRJ022,Marketing Delivery 22,Marketing,EMP022,2026-08-10,2026-09-12,Delayed,27.0,1875000.0,3063599.09
+PRJ023,Finance Delivery 23,Finance,EMP023,2026-05-27,2026-09-14,Delayed,41.0,1550000.0,2593887.78
+PRJ024,Operations Delivery 24,Operations,EMP024,2025-11-22,2026-05-08,Delayed,81.0,1500000.0,2010037.43
+PRJ025,Engineering Delivery 25,Engineering,EMP025,2025-11-23,2026-01-19,Delayed,62.0,1400000.0,1744179.22
+PRJ026,Product Delivery 26,Product,EMP026,2026-03-18,2026-06-14,Delayed,46.0,1400000.0,2139829.78
+PRJ027,Customer Success Delivery 27,Customer Success,EMP027,2025-12-05,2026-04-05,Delayed,41.0,475000.0,784191.59
+PRJ028,Marketing Delivery 28,Marketing,EMP028,2025-12-31,2026-02-18,Delayed,76.0,1675000.0,2801077.79
+PRJ029,Finance Delivery 29,Finance,EMP029,2025-11-14,2026-04-22,Delayed,28.0,1650000.0,1986353.0
+PRJ030,Operations Delivery 30,Operations,EMP030,2025-09-17,2026-03-03,Delayed,50.0,1025000.0,1652294.9
+PRJ031,Engineering Delivery 31,Engineering,EMP031,2026-02-26,2027-02-03,In Progress,55.0,1850000.0,3132725.78
+PRJ032,Product Delivery 32,Product,EMP032,2026-07-21,2026-12-15,In Progress,43.0,1150000.0,1811449.08
+PRJ033,Customer Success Delivery 33,Customer Success,EMP033,2026-07-04,2026-12-20,In Progress,40.0,750000.0,909176.78
+PRJ034,Marketing Delivery 34,Marketing,EMP034,2025-11-29,2026-12-23,In Progress,45.0,1750000.0,2096362.66
+PRJ035,Finance Delivery 35,Finance,EMP035,2026-04-15,2027-02-21,In Progress,58.0,1000000.0,1283860.74
+PRJ036,Operations Delivery 36,Operations,EMP036,2025-11-20,2027-01-08,In Progress,82.0,1575000.0,1984616.44
+PRJ037,Engineering Delivery 37,Engineering,EMP037,2025-10-23,2027-03-01,In Progress,35.0,600000.0,781099.38
+PRJ038,Product Delivery 38,Product,EMP038,2026-07-09,2027-02-02,In Progress,76.0,300000.0,431231.47
+PRJ039,Customer Success Delivery 39,Customer Success,EMP039,2025-08-14,2027-03-03,In Progress,45.0,1325000.0,1616052.49
+PRJ040,Marketing Delivery 40,Marketing,EMP040,2026-04-09,2026-12-24,In Progress,59.0,475000.0,627394.83
+PRJ041,Finance Delivery 41,Finance,EMP041,2026-02-08,2027-01-20,In Progress,46.0,750000.0,1045995.14
+PRJ042,Operations Delivery 42,Operations,EMP042,2025-12-10,2027-03-23,In Progress,73.0,375000.0,515571.03
+PRJ043,Engineering Delivery 43,Engineering,EMP043,2026-07-16,2026-12-31,In Progress,53.0,575000.0,858386.18
+PRJ044,Product Delivery 44,Product,EMP044,2026-07-25,2027-03-14,In Progress,70.0,825000.0,1314563.09
+PRJ045,Customer Success Delivery 45,Customer Success,EMP045,2026-08-21,2027-02-26,In Progress,61.0,1250000.0,1944035.76
+PRJ046,Marketing Delivery 46,Marketing,EMP046,2025-11-01,2027-01-19,In Progress,85.0,1550000.0,1957234.57
+PRJ047,Finance Delivery 47,Finance,EMP047,2025-11-08,2027-03-17,In Progress,80.0,1225000.0,2028766.12
+PRJ048,Operations Delivery 48,Operations,EMP048,2025-08-16,2027-02-28,In Progress,59.0,1200000.0,1795143.58
+PRJ049,Engineering Delivery 49,Engineering,EMP001,2026-06-28,2027-01-01,In Progress,73.0,1375000.0,1594126.5
+PRJ050,Product Delivery 50,Product,EMP002,2025-11-25,2027-02-10,In Progress,85.0,1575000.0,1844990.32
+PRJ051,Customer Success Delivery 51,Customer Success,EMP003,2025-12-15,2027-02-05,In Progress,45.0,800000.0,1209987.11
+PRJ052,Marketing Delivery 52,Marketing,EMP004,2026-05-02,2026-12-26,In Progress,48.0,700000.0,1061000.07
+PRJ053,Finance Delivery 53,Finance,EMP005,2026-02-17,2027-01-24,In Progress,77.0,1350000.0,1576386.06
+PRJ054,Operations Delivery 54,Operations,EMP006,2026-07-29,2026-12-26,In Progress,64.0,300000.0,466705.3
+PRJ055,Engineering Delivery 55,Engineering,EMP007,2026-03-03,2027-01-25,In Progress,70.0,1300000.0,2178489.05
+PRJ056,Product Delivery 56,Product,EMP008,2026-05-03,2027-02-26,In Progress,68.0,325000.0,536917.59
+PRJ057,Customer Success Delivery 57,Customer Success,EMP009,2026-06-22,2027-02-25,In Progress,45.0,800000.0,1326303.12
+PRJ058,Marketing Delivery 58,Marketing,EMP010,2025-09-05,2027-02-19,In Progress,54.0,1250000.0,1562022.25
+PRJ059,Finance Delivery 59,Finance,EMP011,2026-03-16,2027-02-22,In Progress,30.0,400000.0,463477.35
+PRJ060,Operations Delivery 60,Operations,EMP012,2026-06-20,2027-02-14,In Progress,37.0,1425000.0,2055519.63

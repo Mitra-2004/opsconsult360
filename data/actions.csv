@@ -1,0 +1,22 @@
+action_id,project_id,owner_id,action,priority,due_date,status
+ACT007,PRJ007,EMP007,Review delivery constraints for PRJ007,Medium,2026-11-22,Open
+ACT014,PRJ014,EMP014,Review delivery constraints for PRJ014,Medium,2026-11-24,Open
+ACT016,PRJ016,EMP016,Review delivery constraints for PRJ016,High,2026-11-24,Open
+ACT017,PRJ017,EMP017,Review delivery constraints for PRJ017,High,2026-12-09,Open
+ACT018,PRJ018,EMP018,Review delivery constraints for PRJ018,High,2026-11-22,Open
+ACT019,PRJ019,EMP019,Review delivery constraints for PRJ019,High,2026-12-01,Open
+ACT020,PRJ020,EMP020,Review delivery constraints for PRJ020,High,2026-11-19,Open
+ACT021,PRJ021,EMP021,Review delivery constraints for PRJ021,High,2026-12-12,Open
+ACT022,PRJ022,EMP022,Review delivery constraints for PRJ022,High,2026-11-29,Open
+ACT023,PRJ023,EMP023,Review delivery constraints for PRJ023,High,2026-11-28,Open
+ACT024,PRJ024,EMP024,Review delivery constraints for PRJ024,High,2026-11-25,Open
+ACT025,PRJ025,EMP025,Review delivery constraints for PRJ025,High,2026-11-15,Open
+ACT026,PRJ026,EMP026,Review delivery constraints for PRJ026,High,2026-11-28,Open
+ACT027,PRJ027,EMP027,Review delivery constraints for PRJ027,High,2026-11-29,Open
+ACT028,PRJ028,EMP028,Review delivery constraints for PRJ028,High,2026-12-10,Open
+ACT029,PRJ029,EMP029,Review delivery constraints for PRJ029,High,2026-11-14,Open
+ACT030,PRJ030,EMP030,Review delivery constraints for PRJ030,High,2026-12-05,Open
+ACT035,PRJ035,EMP035,Review delivery constraints for PRJ035,Medium,2026-11-22,Open
+ACT042,PRJ042,EMP042,Review delivery constraints for PRJ042,Medium,2026-11-23,Open
+ACT049,PRJ049,EMP001,Review delivery constraints for PRJ049,Medium,2026-11-26,Open
+ACT056,PRJ056,EMP008,Review delivery constraints for PRJ056,Medium,2026-11-28,Open

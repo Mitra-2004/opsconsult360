@@ -1,0 +1,49 @@
+employee_id,employee_name,department,weekly_capacity_hours,hourly_cost_inr
+EMP001,Team Member 01,Engineering,40.0,850.0
+EMP002,Team Member 02,Product,40.0,950.0
+EMP003,Team Member 03,Customer Success,40.0,700.0
+EMP004,Team Member 04,Marketing,40.0,650.0
+EMP005,Team Member 05,Finance,40.0,800.0
+EMP006,Team Member 06,Operations,40.0,750.0
+EMP007,Team Member 07,Engineering,40.0,850.0
+EMP008,Team Member 08,Product,40.0,950.0
+EMP009,Team Member 09,Customer Success,40.0,700.0
+EMP010,Team Member 10,Marketing,40.0,650.0
+EMP011,Team Member 11,Finance,40.0,800.0
+EMP012,Team Member 12,Operations,40.0,750.0
+EMP013,Team Member 13,Engineering,40.0,850.0
+EMP014,Team Member 14,Product,40.0,950.0
+EMP015,Team Member 15,Customer Success,40.0,700.0
+EMP016,Team Member 16,Marketing,40.0,650.0
+EMP017,Team Member 17,Finance,40.0,800.0
+EMP018,Team Member 18,Operations,40.0,750.0
+EMP019,Team Member 19,Engineering,40.0,850.0
+EMP020,Team Member 20,Product,40.0,950.0
+EMP021,Team Member 21,Customer Success,40.0,700.0
+EMP022,Team Member 22,Marketing,40.0,650.0
+EMP023,Team Member 23,Finance,40.0,800.0
+EMP024,Team Member 24,Operations,40.0,750.0
+EMP025,Team Member 25,Engineering,40.0,850.0
+EMP026,Team Member 26,Product,40.0,950.0
+EMP027,Team Member 27,Customer Success,40.0,700.0
+EMP028,Team Member 28,Marketing,40.0,650.0
+EMP029,Team Member 29,Finance,40.0,800.0
+EMP030,Team Member 30,Operations,40.0,750.0
+EMP031,Team Member 31,Engineering,40.0,850.0
+EMP032,Team Member 32,Product,40.0,950.0
+EMP033,Team Member 33,Customer Success,40.0,700.0
+EMP034,Team Member 34,Marketing,40.0,650.0
+EMP035,Team Member 35,Finance,40.0,800.0
+EMP036,Team Member 36,Operations,40.0,750.0
+EMP037,Team Member 37,Engineering,40.0,850.0
+EMP038,Team Member 38,Product,40.0,950.0
+EMP039,Team Member 39,Customer Success,40.0,700.0
+EMP040,Team Member 40,Marketing,40.0,650.0
+EMP041,Team Member 41,Finance,40.0,800.0
+EMP042,Team Member 42,Operations,40.0,750.0
+EMP043,Team Member 43,Engineering,40.0,850.0
+EMP044,Team Member 44,Product,40.0,950.0
+EMP045,Team Member 45,Customer Success,40.0,700.0
+EMP046,Team Member 46,Marketing,40.0,650.0
+EMP047,Team Member 47,Finance,40.0,800.0
+EMP048,Team Member 48,Operations,40.0,750.0
