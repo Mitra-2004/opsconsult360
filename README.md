@@ -1,5 +1,22 @@
 # OpsConsult 360
 
+## v2 — Recruiter-grade enterprise UI
+
+**Live Vercel production deployment:** [opsconsult360.vercel.app](https://opsconsult360.vercel.app/). The production deployment is marked READY, and its CSS/JS/HTML asset manifest was inspected. Independent external HTTP verification was unavailable in this chat.
+
+The original synthetic dataset and reporting calculations are preserved. v2 improves presentation and decision-making without adding fabricated results:
+
+- Consistent enterprise typography, dark navy masthead, teal highlights, responsive KPI cards and accessible focus states.
+- One-click **All / Delayed / In progress / Completed** quick filters that update existing project KPIs and tables.
+- Interactive **delivery composition** and **department cost variance** charts derived from the live filtered dataset.
+- Grounded **Management attention** summary (delays, sampled-period cost overruns, open actions), not algorithmic risk forecasts.
+- Project investigation details, financial checks, department filtering, reset, project search and CSV export retained.
+- Reduced-motion support and responsive layout at mobile widths.
+
+**QA:** The GitHub [v2 browser suite](.github/workflows/visual-qa.yml) passed with real Chromium testing of navigation, KPI filters, chart rendering, CSV downloads, project investigation, reset, and a 390px responsive viewport. Updated screenshots are in [docs/screenshots](docs/screenshots).
+
+**Limitations:** This is the standalone HTML dashboard, not the native Power BI report. Native Excel PivotTables and slicers, and account-level Power BI final inspection remain separate tasks. The Vercel production snapshot was uploaded via API rather than a connected Git repository, so future GitHub code updates require a new deployment.
+
 ## Live interactive dashboard
 
 **[Open OpsConsult 360 — Production dashboard](https://opsconsult360.vercel.app/)**
