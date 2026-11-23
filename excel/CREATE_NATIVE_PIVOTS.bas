@@ -58,7 +58,7 @@ Private Sub CreatePivot(ByVal wb As Workbook, ByVal sourceName As String, _
     destination.Range("A2").Value = "Synthetic data | Refresh via Data > Refresh All"
 
     Set cache = wb.PivotCaches.Create(SourceType:=xlDatabase, _
-        SourceData:="\'" & sourceSheet.Name & "\'!" & sourceRange.Address(ReferenceStyle:=xlR1C1))
+        SourceData:="'" & sourceSheet.Name & "'!" & sourceRange.Address(ReferenceStyle:=xlR1C1))
     Set pt = cache.CreatePivotTable(TableDestination:=destination.Range("A4"), _
         TableName:=pivotName)
     With pt
