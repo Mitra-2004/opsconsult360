@@ -1,36 +1,32 @@
-# Excel / Power BI native acceptance — 23 November 2026
+# Native Excel and Power BI — final acceptance summary
+**Updated:** 23 November 2026
 
-## Excel workbook (direct structural inspection)
+## Excel
 
-- Workbook source: `OpsConsult_360_Excel_Final_Review.xlsx`.
-- 19 worksheets.
-- Project Portfolio headers on row 6 include **Project ID**, **Department**, **Status**, **Planned Cost YTD**, **Actual Cost YTD**.
-- Resource Allocation headers on row 6 include **Department**, **Hours Logged**, **Assigned Capacity**.
-- `excel/CREATE_NATIVE_PIVOTS.bas` references those exact headers and uses source ranges anchored at A6. This is a **static compatibility check only**, not Excel execution.
-- The workbook has **no native PivotTable OOXML parts** in its current committed state; slicers are not verified.
+The owner uploaded `OpsConsult_360_Finall.xlsm` after running `CreateOpsConsultPivotTables` and `AddOpsConsultDepartmentSlicers` in Excel for Mac. The VBA macro reported **3 of 3 Department slicers created**. Structural review of the uploaded workbook confirmed:
 
-### Native Excel acceptance still required
+- Valid Excel OOXML ZIP package; no corrupt entry found.
+- **22 worksheets**, including three native pivot sheets: Delivery, Finance and Resources.
+- **Three native PivotTable definitions** and **three slicer XML parts**.
+- A preserved VBA project inside the `.xlsm` workbook.
+- Reconciliation checkpoints: **60 projects**, **15 delayed**, **15 completed**, **₹2,679,054.29** recorded-period unfavorable cost variance, **21,904** logged hours.
 
-1. Open a COPY of the workbook using Microsoft Excel (Mac or Windows) and import `excel/CREATE_NATIVE_PIVOTS.bas` into a VBA module.
-2. Run `CreateOpsConsultPivotTables` and confirm all three new PivotTable sheets appear without error.
-3. Run `AddOpsConsultDepartmentSlicers` where supported, or insert slicers manually.
-4. Change the Department slicer and verify the pivot measures against the COO Review sheets; save and reopen the workbook.
-5. Keep `.xlsm` if retaining macros; save a clean `.xlsx` only once pivot objects are verified in Excel.
+**Result:** Native object structure independently verified; owner-reported interactive filter tests. **Repository gap:** The `.xlsm` has not yet been uploaded to GitHub; the committed `excel/OpsConsult_360_Excel_Final_Review.xlsx` remains the earlier **19-sheet** source workbook. The presence of the original VBA module is not proof that the original `.xlsx` includes native pivot/slicer objects.
 
-**Status:** NOT executed in Excel. Do not claim native Excel PivotTables or slicers complete.
+## Power BI Service
 
-## Power BI Service (account-level verification)
+The authenticated Work session reportedly verified **four report pages**, **13 DAX measures** and **10 reconciled KPIs**. An interim acceptance round identified three failures (formatting, unimplemented drill-through, missing period filter); remediation followed. The owner then confirmed all final checks passed. Save/reopen already passed in the detailed interim report.
 
-The Microsoft Power BI app has been installed, but the current ChatGPT tool connection does not expose actions for opening or editing reports, and no authenticated Power BI browser tab was available. The project ZIPs contain no `.pbix`/`.pbit` report file.
+**Result:** **Owner-reported final PASS**; not independently rerun from this GitHub update. Refer to [Power BI acceptance](POWER_BI_ACCEPTANCE.md) for feature-level detail and evidence limitations.
 
-The report previously described as saved in My workspace **has not been independently reopened in this session**. Its four pages, DAX results, slicers, visuals, persistence, and report URL therefore remain **unverified**.
+**Availability:** A private semantic model was observed in My workspace. A direct public report URL or native `.pbix` has not been supplied, and this repository's [HTML dashboard](https://opsconsult360.vercel.app/) is **not** Power BI.
 
-### To complete verification
+## Independently verified public delivery
 
-Open the actual Power BI Service report via a supported interactive browser session or supply a readable report export/model and screenshots. Validate the 4 pages, 60-project count, 15 delayed projects, cost variance of ₹2,679,054.29, project/employee relationships, cross-filtering and persistence.
+- [Live HTML dashboard](https://opsconsult360.vercel.app/) was deployed and its publicly served HTML/CSS/JS passed GitHub Actions HTTP checks.
+- Repository Playwright Chromium checks covered HTML dashboard navigation, key filters, CSV download and mobile rendering.
+- SQLite/CSV totals, key sample project/financial values and original workbook package were reconciled in earlier project QA.
 
-**Status:** Saved-report existence and functionality NOT confirmed in this session.
+## Portfolio disclosure
 
-## What IS verified
-
-The HTML OpsConsult 360 v2 site was deployed to Vercel and its public assets passed GitHub Actions HTTP checks. Cross-source SQLite/CSV validation and Playwright browser testing of the HTML site passed. These are **not substitutes** for native Excel and Power BI testing.
+The database, projects, finance and operations are **fully synthetic**. This is a portfolio simulation, not a deployment for Celoxis or a real customer. Distinguish sample-period spend from entire-project budgets.
