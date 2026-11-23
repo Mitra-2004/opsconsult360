@@ -57,6 +57,26 @@ The GitHub Actions workflow performs those checks automatically, then commits an
 - Sampled finance, projects and timesheets have different reporting grains. Do not equate sampled financial cost with a whole-project budget or sampled utilization with total organization capacity.
 - These figures demonstrate a simulated scenario, not measured business impact.
 
+
+## Verified interface screenshots
+
+The dashboard has been captured in a real headless Chromium browser, with department filtering and Reset checked during the same automated run. These are screenshots of the **GitHub-regenerated HTML dashboard**, not the older local HTML version.
+
+| Executive overview | Project delivery |
+|---|---|
+| ![Executive overview](docs/screenshots/01-executive-overview.png) | ![Project delivery](docs/screenshots/02-project-delivery.png) |
+
+| Financial analytics | Resource and operations |
+|---|---|
+| ![Financial analytics](docs/screenshots/03-financial-analytics.png) | ![Resources and actions](docs/screenshots/04-resources-actions.png) |
+
+- [Interview walkthrough](docs/INTERVIEW_DEMO.md)
+- [Power BI acceptance checklist](docs/POWER_BI_ACCEPTANCE.md)
+- [Cross-source automated QA results](docs/AUTOMATED_QA.md)
+- [Visual QA workflow](.github/workflows/visual-qa.yml)
+
+The screenshots, view navigation, department filtering, and Reset were verified using Playwright in GitHub Actions. Native PivotTable creation in Excel for Mac and the saved Power BI Service report still need application-level inspection.
+
 ## Completion and limitations
 **Verified:** repository file presence, six-table reconciliation with SQLite, key project and finance KPIs, workbook package structure, no cached formula errors, dashboard JavaScript smoke tests, 5-slide presentation structure.
 
